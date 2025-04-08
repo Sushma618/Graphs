@@ -1,0 +1,18 @@
+
+class Solution {
+    // Function to create and return adjacency list
+    public List<List<Integer>> printGraph(int v, int edges[][]) {
+      
+      List<List<Integer>> al = new ArrayList<>();
+      for(int i=0;i<v;i++){
+          al.add(new ArrayList<>());
+      }
+      for(int[] edge: edges){
+          int u=edge[0];
+          int ver=edge[1];
+          al.get(u).add(ver);
+          al.get(ver).add(u);
+      }
+      return al;
+      
+    }
